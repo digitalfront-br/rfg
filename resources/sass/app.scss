@@ -1,0 +1,18 @@
+@import "~uikit/src/scss/variables-theme.scss";
+$table-hover-row-background: darken($global-muted-background, 1%);
+@import "~uikit/src/scss/mixins-theme.scss";
+@import "~uikit/src/scss/uikit-theme.scss";
+
+.df-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 140px !important;
+    padding: 0;
+    border-right: 1px #e5e5e5 solid;
+    overflow: auto;
+}
+.df-sidebar+.df-main {
+    padding-left: 140px;
+}
