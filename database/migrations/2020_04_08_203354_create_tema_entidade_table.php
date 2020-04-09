@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVideosTable extends Migration
+class CreateTemaEntidadeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('tema_entidade', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('titulo');
-            $table->string('capa');
-            $table->string('miniatura');
-            $table->longText('descricao');
-            $table->string('video');
+            $table->unsignedBigInteger('tema_id');
+            $table->unsignedBigInteger('entidade_id');
+            $table->foreign('tema_id')->references('id')->on('temas');
+            $table->foreign('entidade_id')->references('id')->on('entidades');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateVideosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('videos');
+        Schema::dropIfExists('tema_entidade');
     }
 }

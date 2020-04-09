@@ -17,7 +17,12 @@ class TemaIdResource extends JsonResource
         return [
             'id'        =>  $this->id,
             'tema'      =>  $this->tema,
-            'videos'    =>  VideoResource::collection($this->videos)
+            $this->mergeWhen($request->has('tipo') && $request->tipo <= 3,[
+                'itens'    =>  EntidadeResource::collection($this->entidades->where('tipo', $request->tipo))
+            ]),
+            $this->mergeWhen($request->tipo >= 4, [
+                'itens' =>  null
+            ])
         ];
     }
 }

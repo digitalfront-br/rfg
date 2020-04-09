@@ -12,13 +12,8 @@ class Tema extends Model
     protected   $table  =   'temas';
     public $timestamps = false;
 
-    public function video()
+    public function entidades()
     {
-        return $this->morphTo();
-    }
-
-    public function videos()
-    {
-        return $this->belongsToMany(Video::class);
+        return $this->belongsToMany(Entidade::class);
     }
 }

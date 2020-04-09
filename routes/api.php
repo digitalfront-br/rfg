@@ -13,11 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('videos', 'api\\VideoApiController');
-Route::resource('podcasts', 'api\\PodcastApiController');
-Route::resource('autores', 'api\\AutorApiController');
+// Route::resource('videos', 'api\\VideoApiController');
+// Route::resource('podcasts', 'api\\PodcastApiController');
+// Route::resource('autores', 'api\\AutorApiController');
 Route::resource('temas', 'api\\TemaApiController');
-Route::resource('tags', 'api\\TagApiController');
+Route::apiResource('entidades', 'api\\EntidadeController');
+// Route::resource('tags', 'api\\TagApiController');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

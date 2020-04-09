@@ -20,8 +20,9 @@ class CreateEntidadesTable extends Migration
             $table->unsignedInteger('tipo');
             $table->string('miniatura');
             $table->longText('descricao');
-            $table->string('video');
-            $table->string('audio');
+            $table->string('video')->nullable();
+            $table->string('audio')->nullable();
+            $table->text('contatos')->nullable();
             $table->timestamps();
         });
     }
