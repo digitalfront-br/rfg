@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Schema\Builder;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\ServiceProvider;
 
