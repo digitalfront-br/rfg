@@ -13,7 +13,7 @@ class CreateTemaEntidadeTable extends Migration
      */
     public function up()
     {
-        Schema::create('tema_entidade', function (Blueprint $table) {
+        Schema::create('entidade_tema', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tema_id');
             $table->unsignedBigInteger('entidade_id');
@@ -30,6 +30,6 @@ class CreateTemaEntidadeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tema_entidade');
+        Schema::dropIfExists('entidade_tema');
     }
 }
